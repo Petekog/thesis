@@ -37,14 +37,4 @@ function POMDPs.action(policy:: BestPolicy, state:: State_simple)
     return best_action
 end
 
-function running_average(stat::MdpStatistics1)
-    sums = 0
-    averages = Float64[]
-    
-    for i in 1:length(stat.pages_seen_per_user)
-        sums += stat.pages_seen_per_user[i]
-        push!(averages, sums/i)
-    end
-    return averages
-end
 
